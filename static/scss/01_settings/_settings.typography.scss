@@ -2,5 +2,9 @@ body {
   font-family: $font-sans;
   font-size: $text-base;
   list-style: $line-height-md;
+
+  @media screen and (min-width: $screen-2xl) {
+    font-size: $text-lg;
+  }
 }
 

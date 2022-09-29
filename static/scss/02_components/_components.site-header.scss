@@ -1,0 +1,50 @@
+#site-header {
+  @include container;
+  padding-top: $space-4;
+  padding-bottom: $space-4;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @media screen and (min-width: $screen-md) {
+    padding-top: $space-6;
+    padding-bottom: $space-6;
+  }
+
+  @media screen and (min-width: $screen-lg) {
+    padding-top: $space-6;
+    padding-bottom: $space-6;
+  }
+  border-bottom: solid var(--black) 1px;
+}
+
+.site-logo {
+  width: calc(100% * 2 / 12) svg {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.mobile-nav--button {
+    @media screen and (min-width: $screen-lg) {
+        display: none;
+    }
+}
+
+.desktop-nav {
+  display: none;
+
+  @media screen and (min-width: $screen-lg) {
+    display: block;
+    width: 50%;
+  }
+}
+
+.desktop-nav__list {
+    display: flex;
+    justify-content: space-between;
+
+    a {
+        text-decoration: none;
+    }
+}
