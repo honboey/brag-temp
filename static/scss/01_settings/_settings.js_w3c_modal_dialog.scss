@@ -1,0 +1,121 @@
+//
+// Modal Dialog Windows
+//
+
+@keyframes modal-fadein {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes modal-fadeout {
+	from {
+		opacity: 1;
+	}
+	to {
+		opacity: 0;
+	}
+}
+
+// This is added to the body when a dialog is open
+// Kills the scroll on the body
+
+.has-dialog {
+	height: 100vh;
+	overflow: hidden;
+}
+
+.dialog-hidden {
+	display: none !important;
+}
+
+.dialog-backdrop {
+	position: fixed;
+	z-index: -10;
+	top: 0;
+	left: 0;
+	width: 0;
+	height: 0;
+	overflow: hidden;
+	outline: 0;
+	opacity: 0;
+	background-color: rgba(var(--black), 0.8);
+
+	&.active {
+	  width: 100vw;
+	  height: 100vh;
+	  z-index: 9999;
+	  overflow-x: hidden;
+	  overflow-y: scroll;
+	  -webkit-overflow-scrolling: touch;
+	  opacity: 0;
+	  animation: modal-fadein 0.35s ease-in-out forwards;
+	}
+
+	&.modal-fadeout {
+	  opacity: 1;
+	  animation: modal-fadeout 0.5s ease-in-out forwards;
+	}
+
+}
+
+.dialog-modal {
+	min-height: 100vh;
+	position: relative;
+}
+
+.dialog-inner {
+	width: auto;
+	max-width: 100rem;
+	min-height: 100vh;
+	margin: auto;
+	padding: $space-20 $space-4 $space-8 $space-4;
+	display: flex;
+	align-items: center;
+	position: relative;
+}
+
+.dialog-content {
+	padding: $space-4;
+	background-color: var(--white);
+	position: relative;
+	z-index: 1;
+	flex: 0 0 100%;
+}
+
+.dialog-close {
+	background-color: transparent;
+	position: absolute;
+	z-index: 2;
+	top: $space-4;
+	right: $space-4;
+
+	.icon {
+		font-size: $text-base;
+	}
+
+}
+
+.dialog-close-overlay {
+	position: fixed;
+	z-index: 0;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	text-indent: 10000px;
+	border: none;
+	border-radius: 0;
+	background-color: rgba(var(--black), 0.2);
+	cursor: default;
+
+	&:hover {
+	  opacity: 1;
+	}
+
+}
