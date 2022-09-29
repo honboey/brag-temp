@@ -1,0 +1,49 @@
+.page-header {
+  display: flex;
+  flex-direction: column-reverse;
+  position: relative;
+  border-bottom: solid var(--black) 1px;
+
+  @media screen and (min-width: $screen-lg) {
+    flex-direction: row;
+  }
+}
+
+.page-header__banner-image {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 87.5% 87.5%, 0 87.5%);
+  aspect-ratio: 1/1.125;
+  object-fit: cover;
+
+  @media screen and (min-width: $screen-lg) {
+    width: 75%;
+    clip-path: polygon(9% 0, 100% 0, 100% 100%, 0 100%, 9% 81.8%);
+    aspect-ratio: 9/5.5;
+  }
+}
+
+.page-header__info {
+  @include container;
+  padding-bottom: $space-8;
+
+  @media screen and (min-width: $screen-lg) {
+    width: 25%;
+    padding-right: 0;
+    padding-top: $space-10;
+    padding-bottom: $space-10;
+  }
+}
+
+.page-header__pre-title {
+  display: block;
+  font-size: $text-base;
+  line-height: $line-height-md;
+}
+
+.page-header__time {
+  display: block;
+
+  @media screen and (min-width: $screen-lg) {
+    position: absolute;
+    bottom: 40px;
+  }
+}

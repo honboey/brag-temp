@@ -3,11 +3,6 @@
   padding-right: $space-4;
 
   @media screen and (min-width: $screen-md) {
-    padding-left: $space-8;
-    padding-right: $space-8;
-  }
-
-  @media screen and (min-width: $screen-lg) {
     padding-left: $space-6;
     padding-right: $space-6;
   }
@@ -21,6 +16,16 @@
     padding-left: $space-10;
     padding-right: $space-10;
   }
+}
+
+.page-section {
+  @include container;
+  padding-top: $space-8;
+  padding-bottom: $space-8;
+}
+
+.page-section + .page-section {
+  border-top: solid var(--black) 1px;
 }
 
 a {

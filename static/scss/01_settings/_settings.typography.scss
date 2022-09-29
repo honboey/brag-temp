@@ -1,10 +1,24 @@
 body {
   font-family: $font-sans;
   font-size: $text-base;
-  list-style: $line-height-md;
+  line-height: $line-height-md;
 
   @media screen and (min-width: $screen-2xl) {
     font-size: $text-lg;
   }
+}
+
+h1 {
+  font-size: $text-5xl;
+  line-height: $line-height-xs;
+  font-weight: 300;
+
+  &+ .page-header__lede {
+    margin-top: $space-3;
+  }
+}
+
+p + * {
+  margin-top: 1em;
 }
 

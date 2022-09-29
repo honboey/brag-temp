@@ -339,8 +339,40 @@ button {
 Lists
 ============
 */
-ul {
+ul,
+ol {
   list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.page-section {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+@media screen and (min-width: 768px) {
+  .page-section {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+@media screen and (min-width: 1366px) {
+  .page-section {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+@media screen and (min-width: 1920px) {
+  .page-section {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+}
+
+.page-section + .page-section {
+  border-top: solid var(--black) 1px;
 }
 
 a {
@@ -350,12 +382,25 @@ a {
 body {
   font-family: Roobert, "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 1rem;
-  list-style: 1.4;
+  line-height: 1.4;
 }
 @media screen and (min-width: 1920px) {
   body {
     font-size: 1.125rem;
   }
+}
+
+h1 {
+  font-size: 3rem;
+  line-height: 1.1;
+  font-weight: 300;
+}
+h1 + .page-header__lede {
+  margin-top: 0.75rem;
+}
+
+p + * {
+  margin-top: 1em;
 }
 
 @keyframes modal-fadein {
@@ -476,12 +521,6 @@ body {
 }
 @media screen and (min-width: 768px) {
   #site-header {
-    padding-left: 2rem;
-    padding-right: 2rem;
-  }
-}
-@media screen and (min-width: 1024px) {
-  #site-header {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
@@ -539,6 +578,105 @@ body {
 }
 .desktop-nav__list a {
   text-decoration: none;
+}
+
+.page-header {
+  display: flex;
+  flex-direction: column-reverse;
+  position: relative;
+  border-bottom: solid var(--black) 1px;
+}
+@media screen and (min-width: 1024px) {
+  .page-header {
+    flex-direction: row;
+  }
+}
+
+.page-header__banner-image {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 87.5% 87.5%, 0 87.5%);
+  aspect-ratio: 1/1.125;
+  object-fit: cover;
+}
+@media screen and (min-width: 1024px) {
+  .page-header__banner-image {
+    width: 75%;
+    clip-path: polygon(9% 0, 100% 0, 100% 100%, 0 100%, 9% 81.8%);
+    aspect-ratio: 9/5.5;
+  }
+}
+
+.page-header__info {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-bottom: 2rem;
+}
+@media screen and (min-width: 768px) {
+  .page-header__info {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+@media screen and (min-width: 1366px) {
+  .page-header__info {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+@media screen and (min-width: 1920px) {
+  .page-header__info {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .page-header__info {
+    width: 25%;
+    padding-right: 0;
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+  }
+}
+
+.page-header__pre-title {
+  display: block;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+.page-header__time {
+  display: block;
+}
+@media screen and (min-width: 1024px) {
+  .page-header__time {
+    position: absolute;
+    bottom: 40px;
+  }
+}
+
+.event-intro {
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (min-width: 1024px) {
+  .event-intro {
+    flex-direction: row;
+    gap: 1rem;
+  }
+}
+
+.event-intro__info {
+  margin-bottom: 1.5rem;
+}
+@media screen and (min-width: 768px) {
+  .event-intro__info {
+    width: 33.3333333333%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .event-intro__body {
+    width: 66.666666667%;
+  }
 }
 
 /*# sourceMappingURL=brag_main.css.map */
