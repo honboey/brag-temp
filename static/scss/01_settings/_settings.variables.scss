@@ -2,19 +2,13 @@
 // BREAKPOINT SETTINGS
 //
 // Define a set of breakpoints for use in media queries.
-// Use device names as a naming convention.
-// Avoid complexity by not using mixins and sass maps.
-//
-// USEFUL REFERENCES:
-//
-// -- https://medium.freecodecamp.org/the-100-correct-way-to-do-css-breakpoints-88d6a5ba1862
 //
 
 $screen-sm: 400px;
 $screen-md: 768px;
 $screen-lg: 1024px;
-$screen-xl:     1366px;
-$screen-xxl:    1920px;
+$screen-xl: 1366px;
+$screen-xxl: 1920px;
 
 //
 // COLOR SETTINGS
@@ -24,32 +18,32 @@ $screen-xxl:    1920px;
 //
 
 :root {
-    --black: #000000;
-    --grey-dark: #333333;
-    --grey-medium: #666666;
-    --grey-light: #999999;
-    --grey-xlight: #ededed;
-    --white: #ffffff;
-  
-    --black-rgb: 0, 0, 0;
-    --white-rgb: 255, 255, 255;
-  }
-  
-  //
-  // Dark Theme
-  //
-  
-  .dark-theme {
-    --black: #ffffff;
-    --grey-dark: #cccccc;
-    --grey-medium: #999999;
-    --grey-light: #666666;
-    --grey-xlight: #222222;
-    --white: #000000;
-  
-    --black-rgb: 255, 255, 255;
-    --white-rgb: 0, 0, 0;
-  }
+  --black: #000000;
+  --grey-dark: #333333;
+  --grey-medium: #666666;
+  --grey-light: #999999;
+  --grey-xlight: #ededed;
+  --white: #ffffff;
+
+  --black-rgb: 0, 0, 0;
+  --white-rgb: 255, 255, 255;
+}
+
+//
+// Dark Theme
+//
+
+.dark-theme {
+  --black: #ffffff;
+  --grey-dark: #cccccc;
+  --grey-medium: #999999;
+  --grey-light: #666666;
+  --grey-xlight: #222222;
+  --white: #000000;
+
+  --black-rgb: 255, 255, 255;
+  --white-rgb: 0, 0, 0;
+}
 
 //
 // SPACING SETTINGS
@@ -58,13 +52,12 @@ $screen-xxl:    1920px;
 // Used for applying consistent margins, padding and positioning.
 //
 
-$space-3:   0.75rem;    // 12px
-$space-4:   1rem;       // 16px
-$space-6:   1.5rem;     // 24px
-$space-8:   2rem;       // 32px
-$space-10:  2.5rem;     // 40px
-$space-20:  5rem;       // 80px
-
+$space-3: 0.75rem; // 12px
+$space-4: 1rem; // 16px
+$space-6: 1.5rem; // 24px
+$space-8: 2rem; // 32px
+$space-10: 2.5rem; // 40px
+$space-20: 5rem; // 80px
 
 //
 // TYPOGRAPHY SETTINGS
@@ -86,14 +79,15 @@ $font-sans: Roobert, "Helvetica Neue", Helvetica, Arial, sans-serif;
 //
 // Default units in rems
 // Sizes relative to the root HTML element
+//
 
-$text-base: 1rem;      // 16px
-$text-lg:   1.125rem;  // 18px
-$text-2xl:  1.5rem;    // 24px
-$text-3xl:  1.875rem;  // 30px
-$text-4xl:  2.25rem;   // 36px
-$text-5xl:  3rem;      // 48px
-$text-6xl:  3.75rem;   // 60px
+$text-base: 1rem; // 16px
+$text-lg: 1.125rem; // 18px
+$text-2xl: 1.5rem; // 24px
+$text-3xl: 1.875rem; // 30px
+$text-4xl: 2.25rem; // 36px
+$text-5xl: 3rem; // 48px
+$text-6xl: 3.75rem; // 60px
 
 $line-height-xs: 1.1;
 $line-height-sm: 1.2;
