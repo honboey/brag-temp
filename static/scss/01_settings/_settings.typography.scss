@@ -13,7 +13,7 @@ h1 {
   line-height: $line-height-xs;
   font-weight: 300;
 
-  &+ .page-header__lede {
+  &+ * {
     margin-top: $space-3;
   }
 }
