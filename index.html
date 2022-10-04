@@ -57,8 +57,8 @@
     </section>
 
     <section class="page-section">
-      <h2>Image Gallery</h2>
-      <div>
+      <h2 class="page-section__left-column">Image Gallery</h2>
+      <div class="page-section__right-column">
         <div class="image-gallery">
           <figure class="image-gallery__figure">
             <img src="https://dummyimage.com/1920x1080/d49324/ffffff.jpg" alt="" class="image-gallery__image">
@@ -90,11 +90,11 @@
           </figure>
         </div>
         <nav class="image-gallery__nav">
-            <img src="https://dummyimage.com/1920x1080/d49324/ffffff.jpg" alt="" class="image-gallery__nav-thumbnail">
-            <img src="https://dummyimage.com/600x400/5299d4/ffffff.jpg" alt="" class="image-gallery__nav-thumbnail">
-            <img src="https://dummyimage.com/800x1200/d499d4/ffffff.jpg" alt="" class="image-gallery__nav-thumbnail">
-            <img src="https://dummyimage.com/800x800/1499d4/ffffff.jpg" alt="" class="image-gallery__nav-thumbnail">
-        </nav>
+          <img src="https://dummyimage.com/1920x1080/d49324/ffffff.jpg" alt="" class="image-gallery__nav-thumbnail">
+          <img src="https://dummyimage.com/600x400/5299d4/ffffff.jpg" alt="" class="image-gallery__nav-thumbnail">
+          <img src="https://dummyimage.com/800x1200/d499d4/ffffff.jpg" alt="" class="image-gallery__nav-thumbnail">
+          <img src="https://dummyimage.com/800x800/1499d4/ffffff.jpg" alt="" class="image-gallery__nav-thumbnail">
+        </nav>        
       </div>
     </section>
 
@@ -231,12 +231,17 @@
 
     var imageGalleryNav = new Flickity('.image-gallery__nav',
       {
-        imageLoaded: true,  
+        imageLoaded: true,
         cellAlign: 'left',
         prevNextButtons: false,
         asNavFor: '.image-gallery',
-        pageDots: false,  
-        contain: true,           
+        pageDots: false,
+        contain: true,
+      });
+
+    var imageGalleryDesktop = new Flickity('.image-gallery--desktop',
+      {
+        imageLoaded: true,
       });
 
   </script>

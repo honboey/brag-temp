@@ -25,10 +25,6 @@ p + * {
 h2 {
   font-size: $text-4xl;
 
-  @media screen and (min-width: $screen-lg) {
-    width: calc(100% * 4/12);
-  }
-
   &+ * {
     margin-top: $space-6;
 

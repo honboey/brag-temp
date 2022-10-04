@@ -18,6 +18,8 @@
   }
 }
 
+// Page Sections
+
 .page-section {
   @include container;
   padding-top: $space-8;
@@ -25,12 +27,27 @@
 
   @media screen and (min-width: $screen-lg) {
     display: flex;
+    column-gap: $gutter-sm;
+  }
+}
+
+.page-section__left-column {
+  @media screen and (min-width: $screen-lg) {
+    width: calc(100% * 4/12);
+  }
+}
+
+.page-section__right-column {
+  @media screen and (min-width: $screen-lg) {
+    width: calc(100% * 8/12);
   }
 }
 
 .page-section + .page-section {
   border-top: solid var(--black) 1px;
 }
+
+// Link colours
 
 a {
     color: inherit;
