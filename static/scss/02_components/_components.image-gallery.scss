@@ -11,7 +11,11 @@
 
 .image-gallery__image {
   width: 100%;
-  object-fit: cover;
+
+  @media screen and (min-width: $screen-md) {
+    max-height: 60vh;
+    object-fit: contain;
+  }
 }
 
 .image-gallery__caption {

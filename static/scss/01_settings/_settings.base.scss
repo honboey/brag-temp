@@ -22,6 +22,10 @@
   @include container;
   padding-top: $space-8;
   padding-bottom: $space-8;
+
+  @media screen and (min-width: $screen-lg) {
+    display: flex;
+  }
 }
 
 .page-section + .page-section {
