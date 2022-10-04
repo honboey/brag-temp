@@ -1,0 +1,44 @@
+.image-gallery__figure {
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  & + .image-gallery__figure {
+    margin-left: $space-4;
+  }
+}
+
+.image-gallery__image {
+  width: 100%;
+  object-fit: cover;
+}
+
+.image-gallery__caption {
+  display: flex;
+  margin-top: $space-4;
+
+  span {
+    display: inline-block;
+    margin-right: $space-4;
+  }
+}
+
+.image-gallery__nav {
+  margin-top: $space-4;
+}
+
+.image-gallery__nav-thumbnail {
+  width: 48px;
+  height: 48px;
+  object-fit: cover;
+  opacity: 0.5;
+
+  & + .image-gallery__nav-thumbnail {
+    margin-left: $space-3;
+  }
+
+  &.is-selected {
+    opacity: 1;
+  }
+}

@@ -22,3 +22,19 @@ p + * {
   margin-top: 1em;
 }
 
+h2 {
+  font-size: $text-4xl;
+
+  &+ * {
+    margin-top: $space-6;
+
+    @media screen and (min-width: $screen-md) {
+      margin-top: $space-10;
+    }
+    
+    @media screen and (min-width: $screen-lg) {
+      margin-top: 0;
+    }
+  }
+}
+
