@@ -94,20 +94,24 @@
           <img src="https://dummyimage.com/600x400/5299d4/ffffff.jpg" alt="" class="image-gallery__nav-thumbnail">
           <img src="https://dummyimage.com/800x1200/d499d4/ffffff.jpg" alt="" class="image-gallery__nav-thumbnail">
           <img src="https://dummyimage.com/800x800/1499d4/ffffff.jpg" alt="" class="image-gallery__nav-thumbnail">
-        </nav>        
+        </nav>
       </div>
     </section>
 
     <section class="page-section">
-      <h2>Watch</h2>
-      <img src="https://dummyimage.com/400x300/d499d4/ffffff.jpg" alt="">
-      <h3>An interview with Linda Jackson</h3>
-      <p>Linda Jackson talks about her upcoming exhibition and the role Bathurst has played in her practice as a textiles artist.</p>
-      <p><a href="">Transcript</a></p>
-      <aside>
-        13:23<br>
-        Published <time>8 June 2022</time>
-      </aside>
+      <h2 class="page-section__left-column">Watch</h2>
+      <div class="page-section__right-column">
+        <lite-youtube videoid="Uo3cL4nrGOk" class="aspect-ratio-16x9" style="background-image: none;">
+          <img class="lazyload" src="https://dummyimage.com/1920x1080/1499d4/ffffff.jpg" alt="">
+        </lite-youtube>
+        <h3>An interview with Linda Jackson</h3>
+        <p>Linda Jackson talks about her upcoming exhibition and the role Bathurst has played in her practice as a textiles artist.</p>
+        <p><a href="">Transcript</a></p>
+        <aside>
+          13:23<br>
+          Published <time>8 June 2022</time>
+        </aside>
+      </div>
     </section>
 
     <section class="page-section">
@@ -219,6 +223,7 @@
 
   <!-- Scripts -->
   <script src="/static/js/flickity.js"></script>
+  <script src="/static/js/lite-video-embed.js"></script>
   <script>
     // Load Flickity carousel
     var imageGallery = new Flickity('.image-gallery',

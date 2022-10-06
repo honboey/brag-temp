@@ -13,7 +13,11 @@ h1 {
   line-height: $line-height-xs;
   font-weight: 300;
 
-  &+ * {
+  @media screen and (min-width: $screen-2xl) {
+    font-size: $text-6xl;
+  }
+
+  & + * {
     margin-top: $space-3;
   }
 }
@@ -25,16 +29,31 @@ p + * {
 h2 {
   font-size: $text-4xl;
 
-  &+ * {
+  @media screen and (min-width: $screen-2xl) {
+    font-size: $text-5xl;
+  }
+
+  & + * {
     margin-top: $space-6;
 
     @media screen and (min-width: $screen-md) {
       margin-top: $space-10;
     }
-    
+
     @media screen and (min-width: $screen-lg) {
       margin-top: 0;
     }
   }
 }
 
+h3 {
+  font-size: $text-2xl;
+
+  @media screen and (min-width: $screen-2xl) {
+    font-size: $text-4xl;
+  }
+
+  & + * {
+    margin-top: $space-6;
+  }
+}

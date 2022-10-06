@@ -1,1 +1,215 @@
+// Only display content to screen readers
+//
+// See: http://a11yproject.com/posts/how-to-hide-content/
+// See: https://hugogiraudel.com/2016/10/13/css-hide-and-seek/
 
+@mixin sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  clip-path: inset(50%);
+  border: 0;
+}
+
+// Use in conjunction with .sr-only to only display content when it's focused.
+// Useful for "Skip to main content" links; see https://www.w3.org/TR/2013/NOTE-WCAG20-TECHS-20130905/G1
+//
+// WARNING!!!
+// Transitioning from position: absolute to position: static can cause issues with
+// VoiceOver on Safari
+//
+// Credit: HTML5 Boilerplate
+
+@mixin sr-only-focusable {
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+
+  &:active,
+  &:focus {
+    position: static;
+    width: auto;
+    height: auto;
+    overflow: visible;
+    clip: auto;
+    white-space: normal;
+    clip-path: none;
+    opacity: 1;
+  }
+}
+
+.sr-only {
+  @include sr-only();
+}
+
+.sr-only-focusable {
+  @include sr-only-focusable();
+}
+
+//
+// Make sure screen readers announce unmarked list items
+//
+// Credit: https://unfetteredthoughts.net/2017/09/26/voiceover-and-list-style-type-none/
+//
+
+@mixin sr-unmarked-list {
+  &::before {
+    content: "\200B";
+    position: absolute;
+  }
+}
+
+.sr-unmarked-list li {
+  @include sr-unmarked-list();
+}
+
+//
+// Skip Links
+// Similar styles to .sr-only and .sr-only-focusable
+// but without position: static; for :focus state
+// an no css transitions
+// Avoids bug in Voice Over/Safari combination on Mac
+//
+
+.sr-skip-link {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+
+  &:focus,
+  &:active {
+    z-index: 999;
+    left: 50%;
+    top: $space-4;
+    transform: translateX(-50%);
+    display: inline-block;
+    height: auto;
+    width: auto;
+    margin: $space-4 0;
+    overflow: visible;
+    clip: auto;
+    clip-path: none;
+    transition: none !important;
+  }
+}
+
+// Responsive Embeds
+
+.responsive-embed {
+  position: relative;
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  aspect-ratio: 16 / 9; // Default to common video format
+
+  iframe,
+  embed,
+  object,
+  video {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+// Aspect Ratios
+
+.aspect-ratio-16x9 {
+  aspect-ratio: 16 / 9;
+}
+
+.aspect-ratio-4x3 {
+  aspect-ratio: 4 / 3;
+}
+
+.aspect-ratio-2x1 {
+  aspect-ratio: 2 / 1;
+}
+
+.aspect-ratio-1x1 {
+  aspect-ratio: 1 / 1;
+}
+
+.aspect-ratio-21x9 {
+  aspect-ratio: 21 / 9;
+}
+
+// iFrames with Aspect Ratios
+
+iframe[class*="aspect-ratio-"] {
+  width: 100%;
+  height: auto;
+}
+
+// Lite Embeds
+
+lite-youtube,
+lite-vimeo {
+  display: block;
+  background-color: var(--grey-dark);
+  position: relative;
+
+  iframe,
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  iframe {
+    border: none;
+  }
+
+  img {
+    z-index: 0;
+    object-fit: cover;
+  }
+
+  > .lite-playbtn {
+    cursor: pointer;
+    width: calc(100% * 2 / 12);
+    height: 100px;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    z-index: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: none;
+    background-color: transparent;
+    background-image: url("../images/play.svg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    transition: opacity 0.2s ease-in-out;
+  }
+
+  &.lite-activated {
+    cursor: unset;
+
+    img {
+      opacity: 0;
+      transition: opacity 0.2s ease-in-out;
+    }
+
+    > .lite-playbtn {
+      opacity: 0;
+      pointer-events: none;
+    }
+  }
+}

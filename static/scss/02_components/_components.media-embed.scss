@@ -1,0 +1,6 @@
+lite-youtube,
+lite-vimeo {
+  & + * {
+    margin-top: $space-6;
+  }
+}
